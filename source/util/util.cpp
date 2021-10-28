@@ -78,8 +78,8 @@ namespace inst::util {
                 {
                     files.push_back(p.path());
                 }
-            }
-         } catch (std::filesystem::filesystem_error & e) {}
+               }
+          } catch (std::filesystem::filesystem_error & e) {}
         }
         std::sort(files.begin(), files.end(), ignoreCaseCompare);
         return files;
