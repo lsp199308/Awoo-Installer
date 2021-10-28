@@ -69,9 +69,9 @@ namespace inst::util {
         std::vector<std::filesystem::path> files;
         for(auto & p: std::filesystem::directory_iterator(dir))
         {
+           try {
             if (std::filesystem::is_regular_file(p))
             {
-            try {
                 std::string ourExtension = p.path().extension().string();
                 std::transform(ourExtension.begin(), ourExtension.end(), ourExtension.begin(), ::tolower);
                 if (extensions.empty() || std::find(extensions.begin(), extensions.end(), ourExtension) != extensions.end())
